@@ -2,8 +2,14 @@
 name = "dirsize"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+rust-version = "1.63"
+description = "Determine directory size in parallel"
+license-file = "LICENSE"
 
 [dependencies]
 rayon = "1.10.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
